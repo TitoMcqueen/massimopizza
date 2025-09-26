@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massimo's Pizzeria - Digital Menu</title>
+    <style>
+        /* Basic Reset and Font */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main Header - Restaurant Name */
+        .main-header {
+            text-align: center;
+            color: #b30000; /* A nice red for Italian feel */
+            margin-bottom: 30px;
+            border-bottom: 3px solid #b30000;
+            padding-bottom: 10px;
+        }
+
+        /* Category Header */
+        h2 {
+            font-size: 1.8em;
+            color: #4CAF50; /* Green for a fresh look */
+            margin-top: 30px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        /* Menu Item Styling */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            align-items: flex-start;
+        }
+        
+        /* Last item in a category doesn't need a dash */
+        .category-group .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #222;
+        }
+
+        .item-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .item-price {
+            font-weight: bold;
+            color: #b30000;
+            font-size: 1.1em;
+            min-width: 60px; /* Ensure price column aligns */
+            text-align: right;
+            padding-left: 15px;
+        }
+
+        /* Floating pizza icon for categories */
+        .category-icon {
+            margin-right: 10px;
+        }
+
+        /* Utility classes for consistency */
+        .pizza-category h2::before {
+            content: "🍕 ";
+        }
+        .appetizer-category h2::before {
+            content: "🥖 ";
+        }
+        .burger-category h2::before {
+            content: "🍔 ";
+        }
+        .chicken-burger-category h2::before {
+            content: "🍗 ";
+        }
+        .veggie-burger-category h2::before {
+            content: "🌱 ";
+        }
+        .wrap-category h2::before {
+            content: "🌯 ";
+        }
+        .panuozzo-category h2::before {
+            content: "🥪 ";
+        }
+        .calzone-category h2::before {
+            content: "🥟 ";
+        }
+        .homemade-category h2::before {
+            content: "🍝 ";
+        }
+        .dessert-category h2::before {
+            content: "🍰 ";
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="main-header">
+            <h1>Massimo's Pizzeria</h1>
+            <p>Authentic Italian & Classic Favorites</p>
+        </header>
+
+        <div class="category-group pizza-category">
+            <h2>Pizzas</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Margherita</div>
+                    <div class="item-description">Tomato sauce, mozzarella, basil or oregano</div>
+                </div>
+                <div class="item-price">€7</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Marinara</div>
+                    <div class="item-description">Tomato sauce, fresh garlic, oregano, EVOO</div>
+                </div>
+                <div class="item-price">€7</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Diavola</div>
+                    <div class="item-description">Tomato sauce, mozzarella, spicy chorizo</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Prosciutto e Funghi</div>
+                    <div class="item-description">Tomato sauce, cooked ham, mushrooms</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Quattro Formaggi</div>
+                    <div class="item-description">Tomato sauce, mozzarella, gorgonzola, cheddar, gouda</div>
+                </div>
+                <div class="item-price">€10</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Pepperoni</div>
+                    <div class="item-description">Tomato sauce, mozzarella, pepperoni</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Tuna & Onion</div>
+                    <div class="item-description">Tomato sauce, mozzarella, tuna, red onion</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Hawaiian</div>
+                    <div class="item-description">Tomato sauce, mozzarella, cooked ham, pineapple</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Capricciosa</div>
+                    <div class="item-description">Tomato sauce, mozzarella, cooked ham, egg</div>
+                </div>
+                <div class="item-price">€10</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Napoli</div>
+                    <div class="item-description">Categoría</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Vegetarian</div>
+                    <div class="item-description">Tomato sauce, mozzarella, zucchini, eggplant, bell pepper, mushrooms, basil</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+        </div>
+        
+        <div class="category-group pizza-category">
+            <h2>White Pizza</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Carbonara</div>
+                    <div class="item-description">Mozzarella, cream, mushrooms, onion, bacon</div>
+                </div>
+                <div class="item-price">€10</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Mimosa</div>
+                    <div class="item-description">Mozzarella, cooked ham, sweetcorn</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Boscaiola</div>
+                    <div class="item-description">Bacon, cooked ham, mushrooms, peas</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Vegetarian Bianca</div>
+                    <div class="item-description">Mozzarella, bell pepper, zucchini, mushrooms, black olives, sweetcorn, basil</div>
+                </div>
+                <div class="item-price">€10</div>
+            </div>
+        </div>
+
+        <div class="category-group pizza-category">
+            <h2>Special Pizza</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Mallorquina</div>
+                    <div class="item-description">Tomato sauce, sobrasada, goat cheese, honey</div>
+                </div>
+                <div class="item-price">€11</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Italian Classic</div>
+                    <div class="item-description">Tomato sauce, mozzarella, cherry tomatoes, arugula, serrano ham, buffalo mozzarella</div>
+                </div>
+                <div class="item-price">€12</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Carnívora</div>
+                    <div class="item-description">Tomato sauce, mozzarella, ground beef, chicken, ham, bacon, pepperoni, sausage</div>
+                </div>
+                <div class="item-price">€13</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Cecina</div>
+                    <div class="item-description">Mozzarella, cherry tomatoes, arugula, cecina, parmesan flakes</div>
+                </div>
+                <div class="item-price">€12</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">6 Cheeses</div>
+                    <div class="item-description">Mozzarella, cheddar, gorgonzola, parmesan, buffalo mozzarella</div>
+                </div>
+                <div class="item-price">€12</div>
+            </div>
+        </div>
+
+        <div class="category-group appetizer-category">
+            <h2>Appetizers</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Garlic Bread</div>
+                    <div class="item-description">Fresh garlic bread</div>
+                </div>
+                <div class="item-price">€4</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">French Fries</div>
+                    <div class="item-description">Golden crispy fries</div>
+                </div>
+                <div class="item-price">€4</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Onion Rings (7)</div>
+                    <div class="item-description">Battered onion rings (7 pcs)</div>
+                </div>
+                <div class="item-price">€5</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Chicken Nuggets (7)</div>
+                    <div class="item-description">Breaded chicken nuggets (7 pcs)</div>
+                </div>
+                <div class="item-price">€5</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Chicken Fingers (7)</div>
+                    <div class="item-description">Crispy chicken fingers (7 pcs)</div>
+                </div>
+                <div class="item-price">€5</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Chicken Wings (7)</div>
+                    <div class="item-description">Spicy chicken wings (7 pcs)</div>
+                </div>
+                <div class="item-price">€6</div>
+            </div>
+        </div>
+
+        <div class="category-group burger-category">
+            <h2>Beef Burgers</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Classic</div>
+                    <div class="item-description">Lettuce, tomato, beef patty</div>
+                </div>
+                <div class="item-price">€7</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Double</div>
+                    <div class="item-description">Lettuce, tomato, double beef patty</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">With Cheese</div>
+                    <div class="item-description">Lettuce, tomato, beef patty, cheese</div>
+                </div>
+                <div class="item-price">€8</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Double with Cheese</div>
+                    <div class="item-description">Lettuce, tomato, double beef patty, cheese</div>
+                </div>
+                <div class="item-price">€10</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Crispy Bacon</div>
+                    <div class="item-description">Lettuce, tomato, beef patty, cheese, bacon</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Double Crispy Bacon</div>
+                    <div class="item-description">Lettuce, tomato, double beef patty, cheese, bacon</div>
+                </div>
+                <div class="item-price">€11</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Massimo’s</div>
+                    <div class="item-description">Lettuce, tomato, beef, cheese, bacon, egg, crispy onion</div>
+                </div>
+                <div class="item-price">€12</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Massimo’s Double</div>
+                    <div class="item-description">Same with double beef patty</div>
+                </div>
+                <div class="item-price">€14</div>
+            </div>
+        </div>
+
+        <div class="category-group chicken-burger-category">
+            <h2>Chicken Burgers</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Classic Chicken</div>
+                    <div class="item-description">Lettuce, tomato, chicken patty</div>
+                </div>
+                <div class="item-price">€7</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Double Chicken</div>
+                    <div class="item-description">Lettuce, tomato, double chicken patty</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">With Cheese</div>
+                    <div class="item-description">Lettuce, tomato, chicken patty, cheese</div>
+                </div>
+                <div class="item-price">€8</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Double with Cheese</div>
+                    <div class="item-description">Lettuce, tomato, double chicken patty, cheese</div>
+                </div>
+                <div class="item-price">€10</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Crispy Bacon</div>
+                    <div class="item-description">Lettuce, tomato, chicken, cheese, bacon</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Double Crispy Bacon</div>
+                    <div class="item-description">Lettuce, tomato, double chicken, cheese, bacon</div>
+                </div>
+                <div class="item-price">€11</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Massimo’s Chicken</div>
+                    <div class="item-description">Lettuce, tomato, chicken, cheese, bacon, egg, crispy onion</div>
+                </div>
+                <div class="item-price">€12</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Massimo’s Chicken Double</div>
+                    <div class="item-description">Same with double chicken patty</div>
+                </div>
+                <div class="item-price">€14</div>
+            </div>
+        </div>
+
+        <div class="category-group veggie-burger-category">
+            <h2>Veggie Burgers</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Veggie</div>
+                    <div class="item-description">Lettuce, tomato, veggie patty</div>
+                </div>
+                <div class="item-price">€7</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">With Cheese</div>
+                    <div class="item-description">Lettuce, tomato, veggie patty, cheese</div>
+                </div>
+                <div class="item-price">€8</div>
+            </div>
+        </div>
+        
+        <div class="category-group wrap-category">
+            <h2>Wraps</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Grilled Chicken</div>
+                    <div class="item-description">Lettuce, tomato, mayo, grilled chicken, cheese</div>
+                </div>
+                <div class="item-price">€7</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Crispy Chicken</div>
+                    <div class="item-description">Lettuce, tomato, mayo, breaded chicken, cheese</div>
+                </div>
+                <div class="item-price">€7</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Vegetarian</div>
+                    <div class="item-description">Roasted seasonal vegetables</div>
+                </div>
+                <div class="item-price">€7</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Tuna</div>
+                    <div class="item-description">Lettuce, tomato, cheese or sweetcorn</div>
+                </div>
+                <div class="item-price">€7</div>
+            </div>
+        </div>
+
+        <div class="category-group panuozzo-category">
+            <h2>Panuozzo</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Caprese</div>
+                    <div class="item-description">Lettuce, tomato, buffalo mozzarella</div>
+                </div>
+                <div class="item-price">€8</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Serrano</div>
+                    <div class="item-description">Arugula, tomato, serrano ham, buffalo mozzarella</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Vegetarian</div>
+                    <div class="item-description">Roasted vegetables, buffalo mozzarella</div>
+                </div>
+                <div class="item-price">€8</div>
+            </div>
+        </div>
+
+        <div class="category-group calzone-category">
+            <h2>Calzone</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Classic</div>
+                    <div class="item-description">Cooked ham, mushrooms, mozzarella, oregano</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Capricciosa</div>
+                    <div class="item-description">Black olives, mushrooms, cooked ham, mozzarella</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Meat Lover</div>
+                    <div class="item-description">Chicken, beef, pepperoni, cooked ham, sausage, mozzarella</div>
+                </div>
+                <div class="item-price">€11</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Vegetarian</div>
+                    <div class="item-description">Roasted seasonal vegetables, cheese</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+        </div>
+
+        <div class="category-group homemade-category">
+            <h2>Homemade Dishes</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Lasagna Bolognese</div>
+                    <div class="item-description">Classic Italian meat lasagna</div>
+                </div>
+                <div class="item-price">€10</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Spaghetti & Meatballs</div>
+                    <div class="item-description">Spaghetti with meatballs in tomato sauce</div>
+                </div>
+                <div class="item-price">€10</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Eggplant Parmigiana</div>
+                    <div class="item-description">Baked eggplant with tomato and cheese</div>
+                </div>
+                <div class="item-price">€9</div>
+            </div>
+        </div>
+
+        <div class="category-group dessert-category">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Tiramisù</div>
+                    <div class="item-description">Classic Italian tiramisù</div>
+                </div>
+                <div class="item-price">€5</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Chocolate Crostata</div>
+                    <div class="item-description">Shortcrust pastry filled with chocolate cream</div>
+                </div>
+                <div class="item-price">€4.50</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Jam Crostata</div>
+                    <div class="item-description">Shortcrust pastry filled with jam</div>
+                </div>
+                <div class="item-price">€4.50</div>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <div class="item-name">Nutella Pizza</div>
+                    <div class="item-description">Pizza crust topped with Nutella and powdered sugar</div>
+                </div>
+                <div class="item-price">€6</div>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
